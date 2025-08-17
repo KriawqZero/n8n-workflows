@@ -1,0 +1,5 @@
+-- Additional RLS examples (optional evolution)
+-- create policy "wf-premium-subscriber-only" on public.workflows for select
+-- using (
+--   (select is_subscriber from public.user_is_subscriber where user_id = auth.uid())
+-- );
