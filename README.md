@@ -38,6 +38,27 @@ http://localhost:8000
 - 🔗 **Mermaid diagram generation** for workflow visualization
 - 🔄 **Real-time workflow naming** with intelligent formatting
 
+### Import Workflows to Supabase
+
+This repository now includes a helper script to import all workflow JSON files
+into a Supabase project for further processing or integration with a SaaS
+platform.
+
+```bash
+# Set credentials for your Supabase project
+export SUPABASE_URL="https://your-project.supabase.co"
+export SUPABASE_SERVICE_ROLE_KEY="service_role_key"
+
+# Optional: provide a Google Translate API key to translate titles/descriptions
+export TRANSLATION_API_KEY="your_key"
+
+# Run the importer
+python scripts/import_supabase.py
+```
+
+The corresponding database schema and RLS policies can be found in
+[`supabase/schema.sql`](supabase/schema.sql).
+
 ### Performance Comparison
 
 | Metric | Old System | New System | Improvement |
