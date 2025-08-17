@@ -1,7 +1,12 @@
 services:
-  doc:
+  n8n-workflows:
+    container_name: n8n-workflows
     image: workflows-doc:latest
     build:
       context: .
-    ports:
-      - "8000:8000"
+    networks:
+      - nginx
+
+networks:
+  nginx:
+    driver: bridge
